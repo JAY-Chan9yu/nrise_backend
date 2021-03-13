@@ -8,6 +8,7 @@ from apps.core.models import TimeModelMixin
 class User(TimeModelMixin, auth_models.AbstractUser):
     name = models.CharField(verbose_name='name', max_length=50)
     last_logout = models.DateTimeField(_('last logout'), blank=True, null=True)
+    withdrawal = models.DateTimeField(_('withdrawal'), blank=True, null=True) # 회원탈퇴 시간
 
     class Meta:
         verbose_name = 'user'
