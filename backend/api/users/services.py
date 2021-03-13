@@ -4,7 +4,7 @@ from uuid import uuid4
 from django.contrib.auth import authenticate
 from rest_framework.exceptions import NotFound
 
-from api.exceptions import WithdrawalUser
+from api.exceptions import WithdrawalUser, AlreadyLogout
 from apps.users.models import User, UserSession
 
 
@@ -44,6 +44,9 @@ class UserService(object):
         except UserSession.DoesNotExist:
             raise NotFound
 
+        if UserSession.last_logout:
+            raise AlreadyLogout
+
         now = datetime.now()
         user_session.last_logout = now
         user_session.save(update_fields=['last_logout'])
@@ -58,6 +61,9 @@ class UserService(object):
             user_session = UserSession.objects.prefetch_related('user').get(uuid=data.get('uuid'))
         except UserSession.DoesNotExist:
             raise NotFound
+
+        if user_session.user.withdrawal:
+            raise WithdrawalUser
 
         # 탈퇴 + last_logout 업데이트
         now = datetime.now()
