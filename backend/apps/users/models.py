@@ -24,4 +24,4 @@ class UserSession(TimeModelMixin):
     ip = models.CharField(_('ip'), max_length=135, null=False) # IPv6 추후 고려해서 128bit + 중간 구분 문자 7bit
 
     class Meta:
-        verbose_name = 'user sesssion'
+        verbose_name = 'user session'
