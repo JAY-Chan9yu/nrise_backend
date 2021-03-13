@@ -7,6 +7,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework',
+    'oauth2_provider',
+
     'apps.users',
 ]
 
@@ -18,6 +21,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'oauth2_provider.middleware.OAuth2TokenMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 AUTH_USER_MODEL = 'users.user'
