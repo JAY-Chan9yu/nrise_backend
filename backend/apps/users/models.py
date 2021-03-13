@@ -18,10 +18,12 @@ class User(TimeModelMixin, auth_models.AbstractUser):
 
 class UserSession(TimeModelMixin):
     """
-        User 세션 관리르 위한 모델
+        User 세션 관리를 위한 모델
     """
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     last_logout = models.DateTimeField(_('last logout'), blank=True, null=True)
     ip = models.CharField(_('ip'), max_length=135, null=False) # IPv6 추후 고려해서 128bit + 중간 구분 문자 7bit
+    uuid = models.CharField(max_length=36) # uuid4 사용
 
     class Meta:
         verbose_name = 'user session'
