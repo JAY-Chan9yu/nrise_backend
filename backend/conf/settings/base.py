@@ -8,7 +8,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'oauth2_provider',
+    # 'oauth2_provider', # oauth2로 구현하려고 했지만, 문서 내용을 보면 oauth2를 사용안하는 것 같아 주석처리
 
     'apps.users',
 ]
