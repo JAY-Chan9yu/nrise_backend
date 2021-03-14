@@ -3,6 +3,10 @@
 <img src="https://img.shields.io/badge/coverage-97%25-green">
 <img src="https://img.shields.io/badge/license-MIT-green">
 
+### 0. version
+- python==3.8.2
+- django==3.1.7 
+
 ### 1. local 파일 세팅
 - local_sample.py -> local.py 변경
 - local.py - database 설정
