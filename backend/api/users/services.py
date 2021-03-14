@@ -44,7 +44,7 @@ class UserService(object):
         except UserSession.DoesNotExist:
             raise NotFound
 
-        if UserSession.last_logout:
+        if user_session.last_logout:
             raise AlreadyLogout
 
         now = datetime.now()
