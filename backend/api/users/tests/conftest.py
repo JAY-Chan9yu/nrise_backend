@@ -2,7 +2,6 @@ from uuid import uuid4
 
 import pytest
 
-# from test_helper.init_data import InitTestData
 from apps.users.models import User, UserSession
 
 
@@ -30,4 +29,5 @@ def users_context():
         'init_username': init_username,
         'init_password': init_password
     }
+
     return init_data

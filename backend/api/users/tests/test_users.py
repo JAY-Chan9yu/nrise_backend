@@ -2,7 +2,6 @@ import pytest
 from rest_framework import status
 from rest_framework.reverse import reverse
 
-from apps.users.models import UserSession
 from request_helper import pytest_request
 
 
