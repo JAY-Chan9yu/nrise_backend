@@ -1,11 +1,11 @@
 # nrise_backend
 
-<img src="https://img.shields.io/badge/coverage-97%25-green">
-<img src="https://img.shields.io/badge/license-MIT-green">
+<img src="https://img.shields.io/badge/coverage-97%25-green"> <img src="https://img.shields.io/badge/license-MIT-green">
 
 ### 0. version
 - python==3.8.2
 - django==3.1.7 
+- 가상환경으로 실행하는걸 추천드립니다.
 
 ### 1. local 파일 세팅
 - local_sample.py -> local.py 변경
@@ -18,6 +18,8 @@
 > pip install -r /requirements/api.txt
 
 ### 4. migrate
+> create database nrisedb; (mysql 접속후)
+> 
 > ./manage.py migrate
 
 ### 5. TDD
